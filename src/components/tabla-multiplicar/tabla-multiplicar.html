@@ -1,0 +1,11 @@
+<h1>Tabla Multiplicar</h1>
+<form #multiplicarForm="ngForm" (ngSubmit)="enviar()">
+  <label>Numero</label>
+  <input type="number" #numero /><br />
+  <button>Enviar</button>
+</form>
+<ul>
+  @for (n of lista; track n; let idx = $index) {
+    <li>{{ numeroInicial }}*{{ idx + 1 }} : {{ n }}</li>
+  }
+</ul>

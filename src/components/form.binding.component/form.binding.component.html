@@ -1,0 +1,19 @@
+<h1>Form bindings</h1>
+<!-- Formulario con binding -->
+<form #formuser="ngForm" (ngSubmit)="getDatos()">
+  <label>Nombre: </label>
+  <input type="text" [(ngModel)]="user.nombre" name="cajanombre" #cajanombre="ngModel" /><br />
+  <label>Apellidos: </label>
+  <input
+    type="text"
+    [(ngModel)]="user.apellidos"
+    name="cajaapellidos"
+    #cajaapellidos="ngModel"
+  /><br />
+  <label>Edad</label>
+  <input type="number" [(ngModel)]="user.edad" name="cajaedad" #cajaedad="ngModel" /><br />
+  <button>Enviar</button>
+</form>
+@if (this.mensaje.length > 1) {
+  <h2>Nombre: {{ user.nombre }}, Apellidos: {{ user.apellidos }},Edad {{ user.edad }}</h2>
+}
