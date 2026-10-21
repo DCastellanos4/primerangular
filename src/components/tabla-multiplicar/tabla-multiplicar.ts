@@ -18,7 +18,6 @@ export class TablaMultiplicar {
     for (let i = 1; i <= 10; i++) {
       this.lista.push(this.numeroInicial * i)
     }
-    console.log(this.lista);
   }
   enviarBinding(): void {
     this.lista = []
