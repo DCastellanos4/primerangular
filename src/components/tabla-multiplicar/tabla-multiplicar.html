@@ -1,11 +1,24 @@
-<h1>Tabla Multiplicar</h1>
-<form #multiplicarForm="ngForm" (ngSubmit)="enviar()">
-  <label>Numero</label>
-  <input type="number" #numero /><br />
-  <button>Enviar</button>
-</form>
-<ul>
-  @for (n of lista; track n; let idx = $index) {
-    <li>{{ numeroInicial }}*{{ idx + 1 }} : {{ n }}</li>
-  }
-</ul>
+<section class="multiplication-card">
+  <div class="card-header">
+    <span class="eyebrow">Matematicas</span>
+    <h1>Tabla de multiplicar</h1>
+    <p>Introduce un numero y descubre su tabla del 1 al 10.</p>
+  </div>
+
+  <form #multiplicarForm="ngForm" (ngSubmit)="enviar()" class="multiplication-form">
+    <div class="field">
+      <label for="numero">Numero</label>
+      <input id="numero" type="number" #numero min="0" required placeholder="Ej. 7" />
+    </div>
+    <button type="submit">Generar tabla</button>
+  </form>
+
+  <ul class="multiplication-list">
+    @for (n of lista; track $index; let idx = $index) {
+      <li>
+        <span>{{ numeroInicial }} x {{ idx + 1 }}</span>
+        <strong>{{ n }}</strong>
+      </li>
+    }
+  </ul>
+</section>
