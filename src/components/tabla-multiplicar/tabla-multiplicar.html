@@ -7,12 +7,25 @@
 
   <form #multiplicarForm="ngForm" (ngSubmit)="enviar()" class="multiplication-form">
     <div class="field">
-      <label for="numero">Numero</label>
+      <label for="numero">Numero Reference</label>
       <input id="numero" type="number" #numero min="0" required placeholder="Ej. 7" />
     </div>
     <button type="submit">Generar tabla</button>
   </form>
-
+  <form #multiplicarFormBinding="ngForm" (ngSubmit)="enviarBinding()" class="multiplication-form">
+    <div class="field">
+      <label for="numero-binding">Numero Binding</label>
+      <input
+        type="number"
+        [(ngModel)]="numeroBinding"
+        name="numeroBinding"
+        id="numero-binding"
+        required
+        placeholder="Ej. 7"
+      />
+    </div>
+    <button type="submit">Generar tabla</button>
+  </form>
   <ul class="multiplication-list">
     @for (n of lista; track $index; let idx = $index) {
       <li>
